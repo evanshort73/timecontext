@@ -30,3 +30,6 @@ bear = # down
 
 # copying exits selection context
 stoosh = {ctrl+c} If(TimeContext.Restart("select", 0), "", "");
+
+# make sure time context is working
+time context ping = TimeContext.Ping();
