@@ -15,7 +15,7 @@ you will have to edit the source code of `vocola_ext_time_context.py` to reflect
 
 `TimeContext.Restart("some_name")` extends the `"some_name"` context, keeping the original duration and timeout hook. Does nothing and returns `False` if the context is not set.
 
-`TimeContext.Restart("some_name", 0, "noop()")` unsets the `"some_name"` context immediately and prevents any existing timeout hook from running. If it returns `True`, you can be sure that the existing timeout hook did not run.
+`TimeContext.Restart("some_name", 0, "Keys.SendInput({esc})")` unsets the `"some_name"` context immediately, presses escape, and prevents any existing timeout hook from running. If it returns `True`, you can be sure that the new hook has finished running and the old hook did not run. If it returns `False`, the old hook already ran and the new hook did not run.
 
 `TimeContext.Hold` is the same as `TimeContext.Restart` except that it never decreases the remaining time. Also, the second argument is not optional because `Hold` with the original duration would be the same as `Restart` with the original duration.
 
