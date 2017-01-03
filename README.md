@@ -11,7 +11,7 @@ you will have to edit the source code of `vocola_ext_time_context.py` to reflect
 
 `Keys.SendInput` and `noop` are currently the only supported timeout hooks.
 
-`TimeContext.Restart("some_name", 15, "Keys.SendInput({esc})")` extends the `"some_name"` context for 15 seconds and returns `True`, but only if the context is currently set. Any existing timeout hook will no longer run and escape will be pressed instead after 15 seconds. If the `"some_name"` context is not currently set, `TimeContext.Restart` does nothing and returns False.
+`TimeContext.Restart("some_name", 15, "Keys.SendInput({esc})")` extends the `"some_name"` context for 15 seconds and returns `True`, but only if the context is currently set. Any existing timeout hook will no longer run and escape will be pressed instead after 15 seconds. If the `"some_name"` context is not currently set, `TimeContext.Restart` does nothing and returns `False`.
 
 `TimeContext.Restart("some_name")` extends the `"some_name"` context, keeping the original duration and timeout hook. Does nothing and returns `False` if the context is not set.
 
