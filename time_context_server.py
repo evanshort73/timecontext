@@ -108,11 +108,11 @@ def time_context_start(name, duration, release):
     timer.start()
     context_timers[name] = timer
 
-def time_context_restart(name, grace_period=None, release=None):
+def time_context_restart(name, duration=None, release=None):
     timer = context_timers.get(name, EXPIRED_TIMER)
-    if grace_period is not None:
-        grace_period = float(grace_period)
-    return timer.restart(grace_period, *parse_invocation(release))
+    if duration is not None:
+        duration = float(duration)
+    return timer.restart(duration, *parse_invocation(release))
 
 def time_context_hold(name, duration, release=None):
     timer = context_timers.get(name, EXPIRED_TIMER)
