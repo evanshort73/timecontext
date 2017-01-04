@@ -20,3 +20,5 @@ you will have to edit the source code of `vocola_ext_time_context.py` to reflect
 `TimeContext.Hold` is the same as `TimeContext.Restart` except that it never decreases the remaining time. Also, the second argument is not optional because `Hold` with the original duration would be the same as `Restart` with the original duration.
 
 Due to unfortunate circumstances, time context commands are run on a "server", which is actually a Python subprocess listening for commands on stdin. `TimeContext.Ping()` prints `"time context server running"` in the NatLink window if it could successfully communicate with the server.
+
+To see my current voice command setup using this extension, go to https://github.com/evanshort73/mypersonalvcl
