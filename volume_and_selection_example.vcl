@@ -1,15 +1,15 @@
 # Global voice commands
 
 # start selection context
-grab = TimeContext.Start("select", 40, "noop()");
+grab = TimeContext.Start("select", 40);
 
-# exit selection context (wrapped in If to avoid typing True or False)
-jettison = If(TimeContext.Restart("select", 0), "", "");
+# exit selection context
+jetsam = TimeContext.Start("select", 0);
 
 # show volume control and start volume context
 volley =
   Keys.SendInput({VolumeUp}{VolumeDown})
-  TimeContext.Start("volume", 3, "noop()");
+  TimeContext.Start("volume", 3);
 
 lap = # left
   If(TimeContext.Restart("select"), {shift+left}, {left});
@@ -29,7 +29,4 @@ bear = # down
         {down}));
 
 # copying exits selection context
-bottle = {ctrl+c} If(TimeContext.Restart("select", 0), "", "");
-
-# make sure time context is working
-time context ping = TimeContext.Ping();
+bottle = {ctrl+c} TimeContext.Start("select", 0);
