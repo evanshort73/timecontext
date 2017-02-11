@@ -2,9 +2,6 @@ Temporarily change the meaning of Vocola commands. See `volume_and_selection_exa
 
 To install, copy `vocola_ext_time_context.py` into `/NatLink/NatLink/Vocola/extensions`
 
-Note: If your `pythonw.exe` is not in `/Python27` or your Vocola extensions are not in `/NatLink/NatLink/Vocola/extensions`,
-you will have to edit the source code of `vocola_ext_time_context.py` to reflect that.
-
 `TimeContext.Start("some_name", 23)` sets the `"some_name"` context for 23 seconds. Floating point durations are also allowed.
 
 `TimeContext.Start("some_name", 0)` unsets the `"some_name"` context immediately.
