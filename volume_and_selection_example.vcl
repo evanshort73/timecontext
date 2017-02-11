@@ -29,4 +29,4 @@ bear = # down
         {down}));
 
 # copying exits selection context
-bottle = {ctrl+c} TimeContext.Start("select", 0);
+nab = {ctrl+c} TimeContext.Start("select", 0);
